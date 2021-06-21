@@ -4,7 +4,7 @@ SmartFactory 공정관리 with RaspberryPi
 #### 02. 구현   
 #### 03. 테스트 
 ----------------------------------------   
-### 01. 분석 및 설계   
+## 01. 분석 및 설계   
 
 #### WBS 작성    
 ⚡WBS란?   
@@ -17,14 +17,14 @@ SmartFactory 공정관리 with RaspberryPi
 
 ---------------------------------------
 
-### 02. 구현   
+## 02. 구현   
 
-#### IoT 디바이스 구성   
-🌌 데이터 베이스 모델링   
+### IoT 디바이스 구성   
+#### 🌌 데이터 베이스 모델링   
 - 테이블 기본서에 작성된 토대로 데이터베이스 다이어그램을 생성한다.   
 <img src = "https://github.com/hyojin-park24/MiniProject_SimpleMRP/blob/main/images/db1.png" width="40%" height="40%">   
 
-🌌 라즈베리파이 하드웨어 구성    
+#### 🌌 라즈베리파이 하드웨어 구성    
 #### [라즈베리파이 하드웨어 구현 따라하기](https://github.com/hyojin-park24/MiniProject_SimpleMRP/blob/main/RaspberryPi/README.md)   
 #### [라즈베리파이 기본 소스](https://github.com/hyojin-park24/MiniProject_SimpleMRP/tree/main/Raspberrypi%20code)
 
