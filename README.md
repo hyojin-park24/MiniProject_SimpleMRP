@@ -4,7 +4,7 @@ SmartFactory 공정관리 with RaspberryPi
 ## WBS 작성    
 ⚡WBS란?   
 >work breakdown strucuture - 일스케줄을 의미함   
-![WBS](/images/mbs.jpg "mbs이미지"){: width="100" height="100"}
+![WBS](/images/mbs.jpg "mbs이미지"){: width="50" height="60"}
 
 ## 테이블 기본서 작성 
 
