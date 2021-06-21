@@ -1,6 +1,9 @@
 # MiniProject_SimpleMRP
 SmartFactory 공정관리 with RaspberryPi   
-
+## 01. 분석 및 설계    
+## 02. 구현   
+## 03. 테스트 
+----------------------------------------
 ## WBS 작성    
 ⚡WBS란?   
 >work breakdown strucuture - 일스케줄을 의미함   
