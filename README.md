@@ -18,6 +18,12 @@ SmartFactory 공정관리 with RaspberryPi
 ### 02. 구현   
 
 #### IoT 디바이스 구성   
-01) 데이터 베이스 모델링   
+🌌 데이터 베이스 모델링   
 - 테이블 기본서에 작성된 토대로 데이터베이스 다이어그램을 생성한다.   
-<img src = "https://github.com/hyojin-park24/MiniProject_SimpleMRP/blob/main/images/db1.png" width="40%" height="40%">
+<img src = "https://github.com/hyojin-park24/MiniProject_SimpleMRP/blob/main/images/db1.png" width="40%" height="40%">   
+
+🌌 라즈베리파이 하드웨어 구성    
+라즈베리파이 하드웨어 구현 따라하기   
+라즈베리파이 기본 소스   
+
+
