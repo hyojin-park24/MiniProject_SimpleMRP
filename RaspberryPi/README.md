@@ -14,10 +14,10 @@
 ### TCS3200 컬러 감지 센서모듈 GY-31   
 <img src = "https://github.com/hyojin-park24/MiniProject_SimpleMRP/blob/main/images/TCS.jpg" width="40%" height="40%">   
 - 컬러 감지 센서 모듈   
-    - 기본적인 로직은 S2와 S3의 값의 높낮이로 칼라값을 읽어옴   
-    - S2-Low, S3-Low이면 RED값 생성   
-    - S2-High, S3-High이면 GREEN값 생성   
-    - S2-Low, S3-High이면 BLUE값 생성 
+    * 기본적인 로직은 S2와 S3의 값의 높낮이로 칼라값을 읽어옴   
+    * S2-Low, S3-Low이면 RED값 생성   
+    * S2-High, S3-High이면 GREEN값 생성   
+    * S2-Low, S3-High이면 BLUE값 생성    
 
 ### 부품 연결도   
 <img src = "https://github.com/hyojin-park24/MiniProject_SimpleMRP/blob/main/images/pasted2.png" width="40%" height="40%">   
