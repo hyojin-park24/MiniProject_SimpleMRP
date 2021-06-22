@@ -26,6 +26,9 @@ SmartFactory 공정관리 with RaspberryPi
 
 #### 🌌 라즈베리파이 하드웨어 구성    
 #### [라즈베리파이 하드웨어 구현 따라하기](https://github.com/hyojin-park24/MiniProject_SimpleMRP/blob/main/RaspberryPi/README.md)   
-#### [라즈베리파이 기본 소스](https://github.com/hyojin-park24/MiniProject_SimpleMRP/tree/main/Raspberrypi%20code)
+#### [라즈베리파이 기본 소스](https://github.com/hyojin-park24/MiniProject_SimpleMRP/tree/main/Raspberrypi%20code)   
+
+#### 🌌 실행결과   
+- 각 색의 값이 가장 작게 나옴
 
 
