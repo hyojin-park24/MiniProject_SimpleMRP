@@ -32,6 +32,9 @@ SmartFactory 공정관리 with RaspberryPi
 - 각 색의 값이 가장 작게 나옴   
 
 #### 🌌 MQTT   
-- MQTT를 활용한 데이터 연결
+- MQTT를 활용한 데이터 연결   
+
+#### 🌌 공정관리 플랫폼 구성   
+- MRP (WPF, Winform, Json)을 활용한 모니터링 화면 구성   
 
 
