@@ -12,7 +12,7 @@ namespace MRPApp.Logic
     {
         
         //셋팅 테이블에서 데이터 가져오기
-        internal static List<Settings> GetSettings()    //internal : 같은 어셈블리 내에서는 public으로 적용됨
+        public static List<Settings> GetSettings()    //internal : 같은 어셈블리 내에서는 public으로 적용됨
         {
             List<Model.Settings> settings;
             using (var ctx = new MRPEntities()) // MRPEntities가 데이터베이스 연결해주는 것
