@@ -12,18 +12,26 @@ namespace MRPApp.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Tag
+    public partial class Settings
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tag()
+        public Settings()
         {
-            this.Item = new HashSet<Item>();
+            this.Schedules = new HashSet<Schedules>();
+            this.Schedules1 = new HashSet<Schedules>();
         }
     
-        public int TagID { get; set; }
-        public string EPC { get; set; }
+        public string BasicCode { get; set; }
+        public string CodeName { get; set; }
+        public string CodeDesc { get; set; }
+        public Nullable<System.DateTime> RegDate { get; set; }
+        public string RegID { get; set; }
+        public Nullable<System.DateTime> ModDate { get; set; }
+        public string ModID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Item> Item { get; set; }
+        public virtual ICollection<Schedules> Schedules { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Schedules> Schedules1 { get; set; }
     }
 }

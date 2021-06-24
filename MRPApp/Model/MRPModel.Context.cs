@@ -13,10 +13,10 @@ namespace MRPApp.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SMSEntities : DbContext
+    public partial class MRPEntities : DbContext
     {
-        public SMSEntities()
-            : base("name=SMSEntities")
+        public MRPEntities()
+            : base("name=MRPEntities")
         {
         }
     
@@ -25,17 +25,8 @@ namespace MRPApp.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Antenna> Antenna { get; set; }
-        public virtual DbSet<Barcode> Barcode { get; set; }
-        public virtual DbSet<BookOut> BookOut { get; set; }
-        public virtual DbSet<BookOutItem> BookOutItem { get; set; }
-        public virtual DbSet<Brand> Brand { get; set; }
-        public virtual DbSet<Category> Category { get; set; }
-        public virtual DbSet<Item> Item { get; set; }
-        public virtual DbSet<Reader> Reader { get; set; }
-        public virtual DbSet<Stock> Stock { get; set; }
-        public virtual DbSet<Store> Store { get; set; }
-        public virtual DbSet<Tag> Tag { get; set; }
-        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Process> Process { get; set; }
+        public virtual DbSet<Schedules> Schedules { get; set; }
+        public virtual DbSet<Settings> Settings { get; set; }
     }
 }

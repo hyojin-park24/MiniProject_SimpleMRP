@@ -10,55 +10,32 @@ namespace MRPApp.Logic
 {
     public class DataAccess
     {
-        public static List<User> GetUsers()
+        
+        //셋팅 테이블에서 데이터 가져오기
+        internal static List<Settings> GetSettings()    //internal : 같은 어셈블리 내에서는 public으로 적용됨
         {
-            List<User> users;
-            using (var ctx = new SMSEntities())
-            {
-                users = ctx.User.ToList(); // = SELECT * FROM user
-            }
-            return users;
+            List<Model.Settings> settings;
+            using (var ctx = new MRPEntities()) // MRPEntities가 데이터베이스 연결해주는 것
+                settings = ctx.Settings.ToList();
+
+            return settings;
         }
 
-        /// <summary>
-        /// 입력, 수정 동시에...
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns>0또는 1이상</returns>
-        public static int SetUser(User user)
+        internal static int SetSettings(Settings item)
         {
-            using (var ctx = new SMSEntities())
+            using (var ctx = new MRPEntities())
             {
-                ctx.User.AddOrUpdate(user);
-                return ctx.SaveChanges(); // commit
+                ctx.Settings.AddOrUpdate(item);
+                return ctx.SaveChanges();
             }
         }
 
-        public static List<Stock> GetStocks()
+        internal static int DelSetting(Settings item)
         {
-            List<Stock> stocks;
-            using (var ctx = new SMSEntities())
+            using (var ctx = new MRPEntities())
             {
-                stocks = ctx.Stock.ToList();
-            }
-            return stocks;
-        }
-
-        public static List<Store> GetStores()
-        {
-            List<Store> stores;
-            using (var ctx = new SMSEntities())
-            {
-                stores = ctx.Store.ToList();
-            }
-            return stores;
-        }
-
-        public static int SetStore(Store store)
-        {
-            using (var ctx = new SMSEntities())
-            {
-                ctx.Store.AddOrUpdate(store);
+                var obj = ctx.Settings.Find(item.BasicCode);
+                ctx.Settings.Remove(obj);       //DELET
                 return ctx.SaveChanges();
             }
         }

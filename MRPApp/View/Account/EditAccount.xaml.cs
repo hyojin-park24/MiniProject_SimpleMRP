@@ -36,15 +36,15 @@ namespace MRPApp.View.Account
                 CboUserAdmin.ItemsSource = comboValues;
                 CboUserActivated.ItemsSource = comboValues;
 
-                var user = Commons.LOGINED_USER;
-                TxtUserID.Text = user.UserID.ToString();
-                TxtUserIdentityNumber.Text = user.UserIdentityNumber.ToString();
-                TxtUserSurName.Text = user.UserSurname.ToString();
-                TxtUserName.Text = user.UserName.ToString();
-                TxtUserEmail.Text = user.UserEmail.ToString();
-                //TxtUserPassword.Password = user.UserPassword; 
-                CboUserAdmin.SelectedIndex = user.UserAdmin == false ? 0 : 1;
-                CboUserActivated.SelectedIndex = user.UserActivated == false ? 0 : 1;
+                //var user = Commons.LOGINED_USER;
+                //TxtUserID.Text = user.UserID.ToString();
+                //TxtUserIdentityNumber.Text = user.UserIdentityNumber.ToString();
+                //TxtUserSurName.Text = user.UserSurname.ToString();
+                //TxtUserName.Text = user.UserName.ToString();
+                //TxtUserEmail.Text = user.UserEmail.ToString();
+                ////TxtUserPassword.Password = user.UserPassword; 
+                //CboUserAdmin.SelectedIndex = user.UserAdmin == false ? 0 : 1;
+                //CboUserActivated.SelectedIndex = user.UserActivated == false ? 0 : 1;
             }
             catch (Exception ex)
             {
@@ -67,7 +67,7 @@ namespace MRPApp.View.Account
                     LblUserPassword.Visibility = LblUserAdmin.Visibility =
                     LblUserActivated.Visibility = Visibility.Hidden;
 
-            var user = Commons.LOGINED_USER;
+            //var user = Commons.LOGINED_USER;
 
             if (string.IsNullOrEmpty(TxtUserSurName.Text))
             {
@@ -100,36 +100,23 @@ namespace MRPApp.View.Account
             if (isValid)
             {
                 //MessageBox.Show("DB 수정처리!");
-                user.UserSurname = TxtUserSurName.Text;
-                user.UserName = TxtUserName.Text;
-                user.UserEmail = TxtUserEmail.Text;
-                user.UserPassword = TxtUserPassword.Password;
-                user.UserAdmin = bool.Parse(CboUserAdmin.SelectedValue.ToString());
-                user.UserActivated = bool.Parse(CboUserActivated.SelectedValue.ToString());
+                //user.UserSurname = TxtUserSurName.Text;
+                //user.UserName = TxtUserName.Text;
+                //user.UserEmail = TxtUserEmail.Text;
+                //user.UserPassword = TxtUserPassword.Password;
+                //user.UserAdmin = bool.Parse(CboUserAdmin.SelectedValue.ToString());
+                //user.UserActivated = bool.Parse(CboUserActivated.SelectedValue.ToString());
 
-                try
-                {
-                    var mdHash = MD5.Create();
-                    user.UserPassword = Commons.GetMd5Hash(mdHash, user.UserPassword);
+                //try
+                //{
+                //    var mdHash = MD5.Create();
+                //    user.UserPassword = Commons.GetMd5Hash(mdHash, user.UserPassword);
 
-                    var result = Logic.DataAccess.SetUser(user);
-                    if (result == 0)
-                    {
-                        // 수정 안됨
-                        LblResult.Text = "계정 수정에 문제가 발생했습니다. 관리자에게 문의 바랍니다.";
-                        LblResult.Foreground = Brushes.OrangeRed;
-                    }
-                    else
-                    {
-                        // 정상적 수정됨
-                        LblResult.Text = "정상적으로 수정했습니다.";
-                        LblResult.Foreground = Brushes.DeepSkyBlue;
-                    }
-                }
-                catch (Exception ex)
-                {                    
-                    Commons.LOGGER.Error($"예외발생 : {ex}");
-                }
+                //}
+                //catch (Exception ex)
+                //{                    
+                //    Commons.LOGGER.Error($"예외발생 : {ex}");
+                //}
             }
         }
     }
