@@ -194,7 +194,7 @@ namespace MRPApp.View.Setting
             {
                 try
                 {
-                    var result = Logic.DataAccess.DelSetting(setting);
+                    var result = Logic.DataAccess.DelSettings(setting);
                     if (result == 0)
                     {
                         Commons.LOGGER.Error("데이터 삭제시 오류 발생");

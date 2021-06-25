@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using MRPApp.View;
 using MRPApp.View.Account;
 using MRPApp.View.Setting;
+using MRPApp.View.Schedule;
 
 namespace MRPApp
 {
@@ -76,6 +77,19 @@ namespace MRPApp
             try
             {
                 ActiveControl.Content = new SettingList();
+            }
+            catch (Exception ex)
+            {
+                Commons.LOGGER.Error($"예외발생 BtnSetting_Click : {ex}");
+                this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
+        }
+
+        private void Btnshcedul_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ActiveControl.Content = new ScheduleList();
             }
             catch (Exception ex)
             {

@@ -1,42 +1,61 @@
-﻿using System;
+﻿using MRPApp.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MRPApp.Model;
 
 namespace MRPApp.Logic
 {
     public class DataAccess
     {
-        
-        //셋팅 테이블에서 데이터 가져오기
-        public static List<Settings> GetSettings()    //internal : 같은 어셈블리 내에서는 public으로 적용됨
+        // 셋팅테이블에서 데이터 가져오기
+        public static List<Settings> GetSettings()
         {
-            List<Model.Settings> settings;
-            using (var ctx = new MRPEntities()) // MRPEntities가 데이터베이스 연결해주는 것
-                settings = ctx.Settings.ToList();
+            List<Model.Settings> list;
 
-            return settings;
+            using (var ctx = new MRPEntities())
+                list = ctx.Settings.ToList(); // SELECT
+
+            return list;
         }
 
-        internal static int SetSettings(Settings item)
+        public static int SetSettings(Settings item)
         {
             using (var ctx = new MRPEntities())
             {
-                ctx.Settings.AddOrUpdate(item);
+                ctx.Settings.AddOrUpdate(item); // INSERT or UPDATE
+                return ctx.SaveChanges(); // COMMIT
+            }
+        }
+
+        public static int DelSettings(Settings item)
+        {
+            using (var ctx = new MRPEntities())
+            {
+                var obj = ctx.Settings.Find(item.BasicCode); // 검색한 실제 데이터를 삭제
+                ctx.Settings.Remove(obj); // DELETE
                 return ctx.SaveChanges();
             }
         }
 
-        internal static int DelSetting(Settings item)
+        internal static List<Schedules> GetSchedules()
+        {
+            List<Model.Schedules> list;
+
+            using (var ctx = new MRPEntities())
+                list = ctx.Schedules.ToList(); // SELECT
+
+            return list;
+        }
+
+        internal static int SetSchedule(Schedules item)
         {
             using (var ctx = new MRPEntities())
             {
-                var obj = ctx.Settings.Find(item.BasicCode);
-                ctx.Settings.Remove(obj);       //DELET
-                return ctx.SaveChanges();
+                ctx.Schedules.AddOrUpdate(item); // INSERT or UPDATE
+                return ctx.SaveChanges(); // COMMIT
             }
         }
     }
