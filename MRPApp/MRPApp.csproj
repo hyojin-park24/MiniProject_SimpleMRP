@@ -225,6 +225,9 @@
     <Compile Include="Model\Settings.cs">
       <DependentUpon>MRPModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\Process\ProcessView.xaml.cs">
+      <DependentUpon>ProcessView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Schedule\ScheduleList.xaml.cs">
       <DependentUpon>ScheduleList.xaml</DependentUpon>
     </Compile>
@@ -250,6 +253,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Process\ProcessView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Schedule\ScheduleList.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -305,7 +312,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -322,6 +331,9 @@
       <DependentUpon>MRPModel.edmx</DependentUpon>
       <LastGenOutput>MRPModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\belt.png" />
+    <Resource Include="Resources\sen.png" />
+    <Resource Include="Resources\geer.png" />
     <Resource Include="Resources\mrp.png" />
     <Resource Include="Resources\stock.png" />
     <Resource Include="Resources\zip_file2.png" />

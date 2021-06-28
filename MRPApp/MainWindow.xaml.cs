@@ -18,6 +18,8 @@ using MRPApp.View;
 using MRPApp.View.Account;
 using MRPApp.View.Setting;
 using MRPApp.View.Schedule;
+using System.Configuration;
+using MRPApp.View.Process;
 
 namespace MRPApp
 {
@@ -36,11 +38,22 @@ namespace MRPApp
         //    ShowLoginView();
         //}
 
-        //private void MetroWindow_Activated(object sender, EventArgs e)
-        //{
-        //    if (Commons.LOGINED_USER != null)
-        //        BtnLoginedId.Content = $"{Commons.LOGINED_USER.UserEmail} ({Commons.LOGINED_USER.UserName})";
-        //}
+        private void MetroWindow_Activated(object sender, EventArgs e)
+       {
+
+            Commons.PLANTCODE = ConfigurationManager.AppSettings.Get("PlantCode");
+            try
+            {
+                var plantName = Logic.DataAccess.GetSettings().Where(c => c.BasicCode.Equals(Commons.PLANTCODE)).FirstOrDefault().CodeName;
+                BtnPlantName.Content = plantName;
+            }
+            catch (Exception ex)
+            {
+                Commons.LOGGER.Error($"예외발생 : {ex}");
+            }
+
+
+        }
 
         //private async void BtnLogOut_Click(object sender, RoutedEventArgs e)
         //{
@@ -90,6 +103,19 @@ namespace MRPApp
             try
             {
                 ActiveControl.Content = new ScheduleList();
+            }
+            catch (Exception ex)
+            {
+                Commons.LOGGER.Error($"예외발생 BtnSetting_Click : {ex}");
+                this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
+        }
+
+        private void BtnMonitoring_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ActiveControl.Content = new ProcessView();
             }
             catch (Exception ex)
             {
