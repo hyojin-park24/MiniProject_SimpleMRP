@@ -42,6 +42,7 @@ namespace MRPApp
        {
 
             Commons.PLANTCODE = ConfigurationManager.AppSettings.Get("PlantCode");
+            Commons.FACILITYID = ConfigurationManager.AppSettings.Get("FacilityID");
             try
             {
                 var plantName = Logic.DataAccess.GetSettings().Where(c => c.BasicCode.Equals(Commons.PLANTCODE)).FirstOrDefault().CodeName;
@@ -83,6 +84,19 @@ namespace MRPApp
 
             if (result == MessageDialogResult.Affirmative)
                 Application.Current.Shutdown();
+        }
+
+        private async void BtnAccount_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ActiveControl.Content = new MyAccount();
+            }
+            catch (Exception ex)
+            {
+                Commons.LOGGER.Error($"예외발생 BtnAccount_Click : {ex}");
+                await this.ShowMessageAsync("예외", $"예외발생 : {ex}");
+            }
         }
 
         private void BtnSetting_Click(object sender, RoutedEventArgs e)

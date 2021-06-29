@@ -168,6 +168,7 @@ namespace DeviceSubApp
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "IoT Device Subscriber";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -56,7 +57,7 @@ namespace DeviceSubApp
         private void Timer_Tick(object sender, EventArgs e)
         {
             LblResult.Text = sw.Elapsed.Seconds.ToString();
-            if(sw.Elapsed.Seconds >= 3)
+            if(sw.Elapsed.Seconds >= 2)
             {
                 sw.Stop();
                 sw.Reset();
@@ -77,13 +78,12 @@ namespace DeviceSubApp
                 using (var conn = new SqlConnection(connectionString))
                 {
                     var prcResult = correctData["PRC_MSG"] == "OK" ? 1 : 0;
-                    string strUpQry = $"UPDATE Process_DEV " +
-                                      $"   SET PrcEndTime = '{DateTime.Now.ToString("HH:mm:ss")}' " +
-                                      $"     , PrcResult = '{prcResult}' " +
+                    string strUpQry = $"UPDATE Process " +
+                                      $"   SET PrcResult = '{prcResult}' " +
                                       $"     , ModDate = '{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' " +
                                       $"     , ModID = '{"SYS"}' " +
                                       $" WHERE PrcIdx = " +
-                                      $" (SELECT TOP 1 PrcIdx FROM Process_DEV ORDER BY PrcIdx DESC)";
+                                      $" (SELECT TOP 1 PrcIdx FROM Process ORDER BY PrcIdx DESC)";
                     try
                     {
                         conn.Open();
@@ -166,6 +166,11 @@ namespace DeviceSubApp
                 RtbSubscr.AppendText($"{lineCount} : {message} \n");
                 RtbSubscr.ScrollToCaret();          //화면 찼을 때 스크롤 생성 후 내려가기
             }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
