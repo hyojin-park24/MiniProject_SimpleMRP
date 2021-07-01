@@ -94,8 +94,8 @@ namespace MRPApp.Logic
 		                                SUM(smr.PrcOK) AS PrcOKAmount, SUM(smr.PrcFail) AS PrcFailAmount
 	                                FROM(
                                        SELECT p.SchIdx, p.PrcDate,
-			                                 CASE p.PrcResult WHEN 1 THEN 1 END AS  PrcOK,
-			                                 CASE p.PrcResult WHEN 0 THEN 1 END AS PrcFail
+			                                 CASE p.PrcResult WHEN 1 THEN 1 ELSE 0 END AS  PrcOK,
+			                                 CASE p.PrcResult WHEN 0 THEN 1 ELSE 0 END AS PrcFail
 	                                   FROM Process AS p
 	                                ) AS smr
                                 GROUP BY smr.SchIdx, smr.PrcDate

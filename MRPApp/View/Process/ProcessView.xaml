@@ -69,7 +69,7 @@
                     VerticalAlignment="Top"
                     Height="100" Width="100"
                     Source="/MRPApp;component/Resources/geer.png" Canvas.Left="582" Canvas.Top="259"/>
-                <Image Width="100" Height="100" 
+                <Image x:Name="Sensor" Width="100" Height="100" 
                        Source="/MRPApp;component/Resources/sen.png" Canvas.Left="527" Canvas.Top="24"
                        ></Image>
                 <Image Source="/MRPApp;component/Resources/belt.png" Canvas.Left="66" Canvas.Top="245"></Image>

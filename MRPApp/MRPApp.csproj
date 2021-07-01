@@ -254,9 +254,6 @@
     <Compile Include="View\Account\EditAccount.xaml.cs">
       <DependentUpon>EditAccount.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Account\MyAccount.xaml.cs">
-      <DependentUpon>MyAccount.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\Store\StoreList.xaml.cs">
       <DependentUpon>StoreList.xaml</DependentUpon>
     </Compile>
@@ -295,10 +292,6 @@
     <Page Include="View\Account\EditAccount.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Account\MyAccount.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Store\StoreList.xaml">
       <Generator>MSBuild:Compile</Generator>
