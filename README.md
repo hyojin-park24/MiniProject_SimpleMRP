@@ -37,11 +37,11 @@ SmartFactory 공정관리 with RaspberryPi
 
 #### 🌌 공정관리 플랫폼 구성   
 - MRP (WPF, Winform, Json)을 활용한 모니터링 화면 구성   
-##### 1일차 (6/24)   
-🟢 DB데몬(서버프로세스) 구축    
-  - WPF화면 설계 
-  - 누겟페키지 : M2Mqtt , Newtonsoft.Jason, System.Data.SqlClient 다운로드    
-  - 왜 다운 했는지 역할 알아보기 
+🕐 1일차 (6/24)   
+ ⚽ DB데몬(서버프로세스) 구축    
+   - WPF화면 설계 
+   - 누겟페키지 : M2Mqtt , Newtonsoft.Jason, System.Data.SqlClient 다운로드    
+   - 왜 다운 했는지 역할 알아보기 
 
 
 
