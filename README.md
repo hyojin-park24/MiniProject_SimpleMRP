@@ -1,5 +1,6 @@
-# MiniProject_SimpleMRP
-SmartFactory 공정관리 with RaspberryPi   
+# MiniProject_SimpleMRP (6/24~6/30)
+SmartFactory 공정관리 with RaspberryPi  
+## 🚩 라즈베리파이에서 센싱된 칼라값을 통해 성공(Green)/실패(Red)에 따라 생산공정이 실시간으로 제대로 이루어지는 지 확인할 수 있다
 #### 01. 분석 및 설계    
 #### 02. 구현   
 #### 03. 테스트 
@@ -36,5 +37,11 @@ SmartFactory 공정관리 with RaspberryPi
 
 #### 🌌 공정관리 플랫폼 구성   
 - MRP (WPF, Winform, Json)을 활용한 모니터링 화면 구성   
+🕐 1일차 (6/24)   
+ ⚽ DB데몬(서버프로세스) 구축    
+   - WPF화면 설계 
+   - 누겟페키지 : M2Mqtt , Newtonsoft.Jason, System.Data.SqlClient 다운로드    
+   - 왜 다운 했는지 역할 알아보기 
+
 
 
