@@ -18,6 +18,7 @@ namespace DeviceSubApp
         string connectionString;    //DB연결 문자열 | MQTT Brocker address
         ulong lineCount;
         delegate void UpdateTextCallback(string message);   //스레드상에서 윈폼 RichTextbox 텍스트출력 필요
+        /*이해 못함*/
 
         Stopwatch sw = new Stopwatch();
         public FormMain()
@@ -48,6 +49,8 @@ namespace DeviceSubApp
                 MessageBox.Show(ex.ToString());
             }
 
+
+            /*Q.타이머 역할은 디자인 적인 것인가요?*/
             Timer.Enabled = true;
             Timer.Interval = 1000;      //1000ms -> 1s
             Timer.Tick += Timer_Tick;
